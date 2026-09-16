@@ -16,9 +16,16 @@ import { getIconComponent } from "@/components/home/ServicesGridSection";
 
 interface NavbarProps {
   onBookNowClick?: () => void;
+  /**
+   * Header appearance variant:
+   * - "auto": Transparent on homepage with dark hero, dark frosted glass on pages with light backgrounds (e.g. /service/*)
+   * - "dark": Always dark frosted glass even at the top of the page
+   * - "transparent": Transparent at the top, dark when scrolled
+   */
+  variant?: "auto" | "dark" | "transparent";
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto" }) => {
   const { services, loading } = useServices();
   const [isScrolled, setIsScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -29,6 +36,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick }) => {
   const navigate = useNavigate();
 
   const isHomePage = location.pathname === "/";
+
+  // Service detail pages (/service/*) have a light hero background,
+  // so navbar must have a dark frosted glass background at the top to remain clearly visible.
+  const isLightPage = location.pathname.startsWith("/service");
+  const isDarkAtTop = variant === "dark" || (variant === "auto" && isLightPage);
+  const showDarkNavbar = isScrolled || isDarkAtTop;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -132,8 +145,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick }) => {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out px-4 sm:px-8 lg:px-12",
-        isScrolled
-          ? "py-3 bg-neutral-950/90 backdrop-blur-md border-b border-white/10 shadow-xl shadow-black/40 text-white"
+        showDarkNavbar
+          ? isScrolled
+            ? "py-3 bg-neutral-950/90 backdrop-blur-md border-b border-white/10 shadow-xl shadow-black/40 text-white"
+            : "py-3 sm:py-3.5 bg-neutral-950/95 backdrop-blur-md border-b border-white/10 shadow-xl shadow-black/40 text-white"
           : "py-5 bg-transparent"
       )}
     >

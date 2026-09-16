@@ -242,16 +242,16 @@ export const ServiceDetailPage: React.FC = () => {
   const faqs = service.faqs || [];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 selection:bg-amber-400 selection:text-black font-sans relative">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 selection:bg-amber-400 selection:text-black font-sans relative pt-[72px] sm:pt-[76px]">
       {/* ========================================================================= */}
       {/* TOP NAVBAR: Consistent luxury dark/glass navbar matching main page */}
       {/* ========================================================================= */}
-      <Navbar onBookNowClick={() => setIsBookModalOpen(true)} />
+      <Navbar onBookNowClick={() => setIsBookModalOpen(true)} variant="dark" />
 
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION: 100% Dynamic Admin Data matching exact placement */}
+      {/* 1. HERO SECTION: Starts right beneath the navbar */}
       {/* ========================================================================= */}
-      <section className="relative pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 bg-white overflow-hidden min-h-[500px] lg:min-h-[560px] flex items-center">
+      <section className="relative py-12 sm:py-16 lg:py-20 bg-white overflow-hidden min-h-[500px] lg:min-h-[560px] flex items-center">
         {/* Subtle decorative concentric arc watermark on left */}
         <div className="absolute top-1/2 -left-20 -translate-y-1/2 w-[550px] h-[550px] rounded-full border border-slate-100/80 pointer-events-none z-0" />
         <div className="absolute top-1/2 -left-10 -translate-y-1/2 w-[420px] h-[420px] rounded-full border border-slate-100/80 pointer-events-none z-0" />
