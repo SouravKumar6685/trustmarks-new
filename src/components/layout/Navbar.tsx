@@ -145,35 +145,33 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out px-4 sm:px-8 lg:px-12",
-        showDarkNavbar
-          ? isScrolled
-            ? "py-3 bg-neutral-950/90 backdrop-blur-md border-b border-white/10 shadow-xl shadow-black/40 text-white"
-            : "py-3 sm:py-3.5 bg-neutral-950/95 backdrop-blur-md border-b border-white/10 shadow-xl shadow-black/40 text-white"
-          : "py-5 bg-transparent"
+        isScrolled
+          ? "py-3 bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-md text-slate-800"
+          : "py-3.5 sm:py-4 bg-white/95 backdrop-blur-lg border-b border-slate-200/60 shadow-sm text-slate-800"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Left Side: Brand & Logo */}
         <button
           onClick={() => scrollToTargetSection("home")}
-          className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded-lg p-1 text-left cursor-pointer"
+          className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-xl p-1 text-left cursor-pointer"
         >
-          <div className="relative flex items-center justify-center">
+          <div className="relative flex items-center justify-center p-0.5 rounded-xl transition-all duration-300 group-hover:scale-105">
             <img
               src="/trustmark-logo.png"
               alt="Trustmarks Logo"
-              className="h-11 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105"
+              className="h-10 sm:h-11 w-auto object-contain transition-transform duration-300"
               onError={(e) => {
                 (e.target as HTMLImageElement).src = "/logo.png";
               }}
             />
           </div>
           <div className="flex flex-col text-left">
-            <span className="font-extrabold text-base sm:text-lg tracking-wider font-sans leading-tight text-white transition-colors duration-200">
+            <span className="font-extrabold text-base sm:text-lg tracking-wider font-sans leading-tight text-slate-900 transition-colors duration-200 group-hover:text-amber-600">
               TRUSTMARKS
             </span>
-            <span className="font-semibold text-[10px] sm:text-xs tracking-widest uppercase text-gray-300 transition-colors duration-200">
-              Management Services
+            <span className="font-bold text-[10px] sm:text-xs tracking-widest uppercase text-slate-500 transition-colors duration-200">
+              CONSULTANTS PRIVATE LIMITED
             </span>
           </div>
         </button>
@@ -186,8 +184,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
             className={cn(
               "px-3 py-2 text-xs xl:text-sm font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer",
               isHomeActive
-                ? "text-amber-400 font-extrabold drop-shadow-[0_0_10px_rgba(245,186,19,0.5)]"
-                : "text-gray-200 hover:text-white"
+                ? "text-amber-500 font-extrabold"
+                : "text-slate-700 hover:text-amber-600"
             )}
           >
             Home
@@ -204,8 +202,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
               className={cn(
                 "flex items-center gap-1 px-3 py-2 text-xs xl:text-sm font-bold tracking-wider uppercase transition-all duration-200 focus:outline-none cursor-pointer",
                 isServicesActive
-                  ? "text-amber-400 font-extrabold drop-shadow-[0_0_10px_rgba(245,186,19,0.5)]"
-                  : "text-gray-200 hover:text-white"
+                  ? "text-amber-500 font-extrabold"
+                  : "text-slate-700 hover:text-amber-600"
               )}
               aria-expanded={servicesOpen}
             >
@@ -213,13 +211,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
               <ChevronDown
                 className={cn(
                   "w-3.5 h-3.5 transition-transform duration-200",
-                  isServicesActive ? "text-amber-400" : "text-gray-400",
-                  servicesOpen && "rotate-180 text-amber-400"
+                  isServicesActive ? "text-amber-500" : "text-slate-400",
+                  servicesOpen && "rotate-180 text-amber-500"
                 )}
               />
             </button>
 
-            {/* Services Dropdown Card with Modern Glassmorphism */}
+            {/* Services Dropdown Card with Modern Light Styling */}
             <AnimatePresence>
               {servicesOpen && (
                 <motion.div
@@ -229,16 +227,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
                   transition={{ duration: 0.2, ease: "easeOut" }}
                   className="absolute top-full left-1/2 -translate-x-1/2 pt-2.5 w-92 xl:w-[420px] z-50"
                 >
-                  <div className="relative overflow-hidden bg-slate-950/75 backdrop-blur-2xl border border-white/15 rounded-3xl p-3.5 shadow-[0_30px_70px_-10px_rgba(0,0,0,0.85),0_0_25px_rgba(255,255,255,0.04)] max-h-[75vh] overflow-y-auto">
-                    {/* Soft ambient glass gradient shimmer */}
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/[0.08] via-transparent to-transparent" />
-
+                  <div className="relative overflow-hidden bg-white/98 backdrop-blur-2xl border border-slate-200 rounded-3xl p-3.5 shadow-[0_20px_50px_rgba(0,0,0,0.12)] max-h-[75vh] overflow-y-auto">
                     {loading ? (
-                      <div className="p-6 text-center text-xs text-slate-400 font-medium">
+                      <div className="p-6 text-center text-xs text-slate-500 font-medium">
                         Loading services...
                       </div>
                     ) : services.length === 0 ? (
-                      <div className="p-6 text-center text-xs text-slate-400 font-medium">
+                      <div className="p-6 text-center text-xs text-slate-500 font-medium">
                         No services configured yet.
                       </div>
                     ) : (
@@ -254,43 +249,43 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
                               key={srv.id || srv.slug}
                               to={`/service/${srv.slug}`}
                               onClick={() => setServicesOpen(false)}
-                              className="group/item flex items-center gap-3.5 p-2.5 sm:p-3 rounded-2xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] hover:border-amber-400/40 transition-all duration-200 text-left shadow-sm"
+                              className="group/item flex items-center gap-3.5 p-2.5 sm:p-3 rounded-2xl bg-slate-50 hover:bg-amber-50/70 border border-slate-100 hover:border-amber-200 transition-all duration-200 text-left shadow-xs"
                             >
-                              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400/20 to-orange-500/10 border border-amber-400/25 text-amber-400 flex items-center justify-center shrink-0 group-hover/item:scale-105 group-hover/item:bg-amber-400 group-hover/item:text-slate-950 group-hover/item:border-amber-400 transition-all duration-200 shadow-sm">
+                              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400/20 to-orange-500/10 border border-amber-400/30 text-amber-600 flex items-center justify-center shrink-0 group-hover/item:scale-105 group-hover/item:bg-amber-400 group-hover/item:text-slate-950 group-hover/item:border-amber-400 transition-all duration-200 shadow-xs">
                                 <IconComp className="w-4 h-4" />
                               </div>
 
                               <div className="flex-1 min-w-0">
                                 <div className="flex items-center justify-between gap-2">
-                                  <span className="text-[13px] font-bold text-slate-100 group-hover/item:text-amber-300 transition-colors truncate">
+                                  <span className="text-[13px] font-bold text-slate-800 group-hover/item:text-amber-700 transition-colors truncate">
                                     {srv.title}
                                   </span>
                                   {showTag && (
-                                    <span className="text-[10px] font-semibold text-slate-400 bg-white/[0.06] px-2 py-0.5 rounded-full border border-white/10 group-hover/item:text-slate-200 group-hover/item:border-white/20 transition-colors shrink-0">
+                                    <span className="text-[10px] font-semibold text-slate-500 bg-slate-200/60 px-2 py-0.5 rounded-full border border-slate-300/40 group-hover/item:text-slate-700 transition-colors shrink-0">
                                       {srv.tag}
                                     </span>
                                   )}
                                 </div>
-                                <p className="text-[11.5px] text-slate-400 group-hover/item:text-slate-300 mt-0.5 line-clamp-1 leading-snug font-normal transition-colors">
+                                <p className="text-[11.5px] text-slate-500 group-hover/item:text-slate-600 mt-0.5 line-clamp-1 leading-snug font-normal transition-colors">
                                   {srv.card_description || srv.page_description}
                                 </p>
                               </div>
 
-                              <ArrowRight className="w-3.5 h-3.5 text-amber-400 opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all shrink-0" />
+                              <ArrowRight className="w-3.5 h-3.5 text-amber-500 opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all shrink-0" />
                             </Link>
                           );
                         })}
                       </div>
                     )}
 
-                    <div className="mt-3 pt-2.5 border-t border-white/10 px-2.5 flex items-center justify-between text-xs relative z-10">
+                    <div className="mt-3 pt-2.5 border-t border-slate-100 px-2.5 flex items-center justify-between text-xs relative z-10">
                       <span className="text-[11px] font-medium text-slate-400">
                         Tailored for Gujarat &amp; Western India
                       </span>
                       <Link
                         to="/services"
                         onClick={() => setServicesOpen(false)}
-                        className="text-xs font-bold text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1.5 group/link cursor-pointer"
+                        className="text-xs font-bold text-amber-600 hover:text-amber-700 transition-colors flex items-center gap-1.5 group/link cursor-pointer"
                       >
                         <span>View All Services</span>
                         <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
@@ -308,8 +303,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
             className={cn(
               "px-3 py-2 text-xs xl:text-sm font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer",
               isIndustriesActive
-                ? "text-amber-400 font-extrabold drop-shadow-[0_0_10px_rgba(245,186,19,0.5)]"
-                : "text-gray-200 hover:text-white"
+                ? "text-amber-500 font-extrabold"
+                : "text-slate-700 hover:text-amber-600"
             )}
           >
             Industries
@@ -321,8 +316,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
             className={cn(
               "px-3 py-2 text-xs xl:text-sm font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer",
               isAboutActive
-                ? "text-amber-400 font-extrabold drop-shadow-[0_0_10px_rgba(245,186,19,0.5)]"
-                : "text-gray-200 hover:text-white"
+                ? "text-amber-500 font-extrabold"
+                : "text-slate-700 hover:text-amber-600"
             )}
           >
             About Us
@@ -334,8 +329,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
             className={cn(
               "px-3 py-2 text-xs xl:text-sm font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer",
               isContactActive
-                ? "text-amber-400 font-extrabold drop-shadow-[0_0_10px_rgba(245,186,19,0.5)]"
-                : "text-gray-200 hover:text-white"
+                ? "text-amber-500 font-extrabold"
+                : "text-slate-700 hover:text-amber-600"
             )}
           >
             Contact Us
@@ -348,7 +343,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             onClick={onBookNowClick}
-            className="relative group overflow-hidden font-extrabold text-xs sm:text-sm tracking-wider uppercase px-5 py-2.5 rounded-full transition-all duration-300 flex items-center gap-2.5 cursor-pointer shadow-md bg-[#F5BA13] hover:bg-[#ffc82a] text-black shadow-[0_4px_20px_rgba(245,186,19,0.4)]"
+            className="relative group overflow-hidden font-extrabold text-xs sm:text-sm tracking-wider uppercase px-5 py-2.5 rounded-full transition-all duration-300 flex items-center gap-2.5 cursor-pointer shadow-md bg-[#EF7F1A] hover:bg-[#EF7F1A] text-black shadow-[0_4px_16px_rgba(245,186,19,0.35)]"
           >
             <span className="relative z-10 font-black">Book Now</span>
             <div className="w-6 h-6 rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 bg-black/90 text-[#F5BA13]">
@@ -359,7 +354,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg transition-colors focus:outline-none bg-white/10 text-white hover:text-amber-400 hover:bg-white/15"
+            className="lg:hidden p-2 rounded-lg transition-colors focus:outline-none bg-slate-100 text-slate-700 hover:text-amber-600 hover:bg-slate-200 border border-slate-200"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -375,7 +370,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden mt-3 pt-3 border-t border-white/15 bg-black/95 backdrop-blur-2xl rounded-2xl p-4 shadow-2xl space-y-3 max-h-[80vh] overflow-y-auto"
+            className="lg:hidden mt-3 pt-3 border-t border-slate-200 bg-white/98 backdrop-blur-2xl rounded-2xl p-4 shadow-xl space-y-3 max-h-[80vh] overflow-y-auto"
           >
             <div className="flex flex-col space-y-1">
               <button
@@ -383,8 +378,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
                 className={cn(
                   "w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold transition-colors",
                   activeSection === "home" && isHomePage
-                    ? "text-amber-400 bg-white/10 font-extrabold"
-                    : "text-gray-200 hover:text-white hover:bg-white/5"
+                    ? "text-amber-600 bg-amber-50 font-extrabold"
+                    : "text-slate-700 hover:text-amber-600 hover:bg-slate-50"
                 )}
               >
                 Home
@@ -397,27 +392,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
                   className={cn(
                     "w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-bold transition-colors",
                     isServicesActive
-                      ? "text-amber-400 bg-white/10 font-extrabold"
-                      : "text-gray-200 hover:text-white hover:bg-white/5"
+                      ? "text-amber-600 bg-amber-50 font-extrabold"
+                      : "text-slate-700 hover:text-amber-600 hover:bg-slate-50"
                   )}
                 >
                   <span>Our Services</span>
                   <ChevronDown
                     className={cn(
                       "w-4 h-4 transition-transform",
-                      mobileServicesOpen ? "rotate-180 text-amber-400" : ""
+                      mobileServicesOpen ? "rotate-180 text-amber-600" : "text-slate-400"
                     )}
                   />
                 </button>
 
                 {mobileServicesOpen && (
-                  <div className="pl-4 pr-1 py-1 space-y-1 border-l-2 border-amber-400/40 ml-3 my-1">
+                  <div className="pl-4 pr-1 py-1 space-y-1 border-l-2 border-amber-400 ml-3 my-1">
                     {services.map((srv) => (
                       <Link
                         key={srv.id || srv.slug}
                         to={`/service/${srv.slug}`}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="block px-2.5 py-1.5 rounded-lg text-xs font-medium text-gray-300 hover:text-amber-400 hover:bg-white/5"
+                        className="block px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-amber-600 hover:bg-amber-50"
                       >
                         {srv.title}
                       </Link>
@@ -425,7 +420,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
                     <Link
                       to="/services"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block px-2.5 py-1.5 rounded-lg text-xs font-bold text-amber-400 hover:underline"
+                      className="block px-2.5 py-1.5 rounded-lg text-xs font-bold text-amber-600 hover:underline"
                     >
                       View All Services &rarr;
                     </Link>
@@ -439,8 +434,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
                 className={cn(
                   "w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold transition-colors block cursor-pointer",
                   isIndustriesActive
-                    ? "text-amber-400 bg-white/10 font-extrabold"
-                    : "text-gray-200 hover:text-white hover:bg-white/5"
+                    ? "text-amber-600 bg-amber-50 font-extrabold"
+                    : "text-slate-700 hover:text-amber-600 hover:bg-slate-50"
                 )}
               >
                 Industries
@@ -452,8 +447,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
                 className={cn(
                   "w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold transition-colors",
                   isAboutActive
-                    ? "text-amber-400 bg-white/10 font-extrabold"
-                    : "text-gray-200 hover:text-white hover:bg-white/5"
+                    ? "text-amber-600 bg-amber-50 font-extrabold"
+                    : "text-slate-700 hover:text-amber-600 hover:bg-slate-50"
                 )}
               >
                 About Us
@@ -465,21 +460,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
                 className={cn(
                   "w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold transition-colors",
                   isContactActive
-                    ? "text-amber-400 bg-white/10 font-extrabold"
-                    : "text-gray-200 hover:text-white hover:bg-white/5"
+                    ? "text-amber-600 bg-amber-50 font-extrabold"
+                    : "text-slate-700 hover:text-amber-600 hover:bg-slate-50"
                 )}
               >
                 Contact Us
               </button>
             </div>
 
-            <div className="pt-2 border-t border-white/10">
+            <div className="pt-2 border-t border-slate-100">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   if (onBookNowClick) onBookNowClick();
                 }}
-                className="w-full bg-[#F5BA13] hover:bg-[#ffc82a] text-black font-bold text-sm py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg cursor-pointer"
+                className="w-full bg-[#F5BA13] hover:bg-[#ffc82a] text-black font-bold text-sm py-3 rounded-xl flex items-center justify-center gap-2 shadow-md cursor-pointer"
               >
                 <PhoneCall className="w-4 h-4" />
                 <span>Book Service Consultation</span>
