@@ -13,7 +13,7 @@ interface BookNowModalProps {
 export const BookNowModal: React.FC<BookNowModalProps> = ({
   isOpen,
   onClose,
-  defaultService = "WorkForce Solutions",
+  defaultService = "Security Solutions",
 }) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -115,9 +115,9 @@ export const BookNowModal: React.FC<BookNowModalProps> = ({
                   <Sparkles className="w-3.5 h-3.5 text-amber-600" />
                   <span>Quick Consultation</span>
                 </div>
-                <h3 className="text-2xl font-extrabold text-slate-900">Book a Service or Audit</h3>
+                <h3 className="text-2xl font-extrabold text-slate-900">Book a Consultation or Audit</h3>
                 <p className="text-xs sm:text-sm text-slate-500 mt-1">
-                  Tell us your facility or staffing requirements for an instant proposal.
+                  Tell us your security, staffing, or HR requirements for an instant proposal.
                 </p>
               </div>
 
@@ -202,10 +202,10 @@ export const BookNowModal: React.FC<BookNowModalProps> = ({
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     className="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                   >
-                    <option value="WorkForce Solutions">WorkForce Solutions (Housekeeping &amp; Facility Ops)</option>
+                    <option value="Security Solutions">Security Solutions (Guarding, Patrolling &amp; Surveillance)</option>
                     <option value="HR Solutions">HR Solutions (Staffing, Payroll &amp; Compliance)</option>
-                    <option value="Integrated Management">Full Integrated Facility Management</option>
-                    <option value="Special Deep Cleaning">One-time Mechanized Deep Cleaning Audit</option>
+                    <option value="WorkForce Solutions">WorkForce Solutions (Industrial &amp; Corporate Staffing)</option>
+                    <option value="Training & Development">Training &amp; Development Programs</option>
                   </select>
                 </div>
 
@@ -215,7 +215,7 @@ export const BookNowModal: React.FC<BookNowModalProps> = ({
                   </label>
                   <textarea
                     rows={2}
-                    placeholder="Briefly describe square footage, number of staff needed, or facility location in Ahmedabad / Gujarat..."
+                    placeholder="Briefly describe number of security guards, HR staffing requirements, or site location in Ahmedabad / Gujarat..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full p-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500"

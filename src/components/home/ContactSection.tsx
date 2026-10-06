@@ -25,7 +25,7 @@ export const ContactSection: React.FC = () => {
     name: "",
     email: "",
     phone: "",
-    service: "Security Services",
+    service: "Security Solutions",
     location: "Ahmedabad / Gandhinagar",
     message: "",
   });
@@ -57,7 +57,7 @@ export const ContactSection: React.FC = () => {
           name: "",
           email: "",
           phone: "",
-          service: "Security Services",
+          service: "Security Solutions",
           location: "Ahmedabad / Gandhinagar",
           message: "",
         });
@@ -298,7 +298,7 @@ export const ContactSection: React.FC = () => {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-700">Facility Location</label>
+                    <label className="text-xs font-bold text-slate-700">Workplace / Site Location</label>
                     <select
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
@@ -322,12 +322,11 @@ export const ContactSection: React.FC = () => {
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#EA580C]/40 focus:border-[#EA580C] focus:bg-white transition-all cursor-pointer"
                   >
-                    <option value="Security Services">Private Security Services &amp; Guarding</option>
+                    <option value="Security Solutions">Private Security Solutions &amp; Guarding</option>
+                    <option value="HR Solutions">HR Solutions, Executive Search &amp; Compliance</option>
                     <option value="Workforce Solutions">Industrial &amp; Corporate Workforce Solutions</option>
-                    <option value="Housekeeping Services">Mechanized Housekeeping &amp; Hygiene Care</option>
-                    <option value="Integrated Facility Management">Integrated Facility Management (IFM / MEP)</option>
-                    <option value="HR Consultancy & Payroll">HR Consultancy, Executive Search &amp; Compliance</option>
-                    <option value="Bespoke Industry Package">Multi-Facility Integrated Operations Package</option>
+                    <option value="Training & Development">Corporate &amp; Industrial Training Programs</option>
+                    <option value="Security & HR Package">Bespoke Security &amp; HR Advisory Package</option>
                   </select>
                 </div>
 
@@ -336,7 +335,7 @@ export const ContactSection: React.FC = () => {
                   <label className="text-xs font-bold text-slate-700">Project Scope / Message</label>
                   <textarea
                     rows={3}
-                    placeholder="Briefly describe your requirements (e.g. number of guards/staff required, facility sq. ft., deployment timeline)..."
+                    placeholder="Briefly describe your requirements (e.g. number of security personnel, HR advisory needs, deployment timeline)..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#EA580C]/40 focus:border-[#EA580C] focus:bg-white transition-all leading-relaxed"

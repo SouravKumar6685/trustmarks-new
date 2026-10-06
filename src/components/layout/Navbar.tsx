@@ -171,7 +171,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
               TRUSTMARKS
             </span>
             <span className="font-bold text-[10px] sm:text-xs tracking-widest uppercase text-slate-500 transition-colors duration-200">
-              CONSULTANTS PRIVATE LIMITED
+              MANAGEMENT SERVICES
             </span>
           </div>
         </button>

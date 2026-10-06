@@ -14,7 +14,20 @@ import { useServices } from "@/context/ServicesContext";
 export const HomePage: React.FC = () => {
   const { services, loading } = useServices();
   const [isBookModalOpen, setIsBookModalOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState("WorkForce Solutions");
+  const [selectedService, setSelectedService] = useState("Security Solutions");
+
+  // Focus only on Security Solutions, HR Solutions, Workforce Staffing, and Training on the Main Page
+  // Explicitly remove Housekeeping and Facility Management from the Main Page showcase
+  const mainPageServices = services.filter((srv) => {
+    const slug = (srv.slug || "").toLowerCase();
+    const title = (srv.title || "").toLowerCase();
+    return (
+      !slug.includes("housekeep") &&
+      !slug.includes("facility") &&
+      !title.includes("housekeep") &&
+      !title.includes("facility")
+    );
+  });
 
   const handleOpenBooking = (serviceName?: string) => {
     if (serviceName) {
@@ -44,23 +57,23 @@ export const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-amber-400 selection:text-black font-sans relative">
       {/* Top Fixed / Glass Navbar */}
-      <Navbar onBookNowClick={() => handleOpenBooking("WorkForce Solutions")} />
+      <Navbar onBookNowClick={() => handleOpenBooking("Security Solutions")} />
 
       {/* Main Page Flow */}
       <main>
         {/* 1. Hero Section */}
         <HeroSection
           onLearnMoreClick={scrollToServices}
-          onBookNowClick={() => handleOpenBooking("WorkForce Solutions")}
+          onBookNowClick={() => handleOpenBooking("Security Solutions")}
         />
 
 
         {/* 2. Services Overview Banner */}
         <ServicesSection onExploreClick={scrollToServices} />
 
-        {/* 3. Services 6-Card Grid Showcase (Connected to Supabase Realtime) */}
+        {/* 3. Services Card Grid Showcase (Focused on Security Solutions, HR Solutions & Workforce) */}
         <ServicesGridSection
-          services={services}
+          services={mainPageServices}
           loading={loading}
         />
 

@@ -10,15 +10,15 @@ interface HeroSectionProps {
 const heroSlides = [
   {
     image: "/hero-bg.jpg",
-    alt: "Trustmarks Facility Management Team in Ahmedabad",
+    alt: "Trustmarks Professional Security Solutions Team in Ahmedabad",
   },
   {
     image: "/bg-img2.avif",
-    alt: "Trustmarks Professional Mechanized Cleaning",
+    alt: "Trustmarks Comprehensive HR & Workforce Solutions",
   },
   {
     image: "/bg-img4.avif",
-    alt: "Trustmarks Corporate Workforce & Staffing",
+    alt: "Trustmarks Corporate Security Guarding & Staffing",
   },
 ];
 
@@ -90,8 +90,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-2xl sm:text-4xl md:text-5xl lg:text-[46px] font-extrabold text-white tracking-tight leading-[1.2] font-sans drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)] max-w-3xl"
         >
-          Integrated Facility Management <br className="hidden sm:inline" />
-          &amp; Housekeeping Services in <br className="hidden sm:inline" />
+          Comprehensive Security Solutions <br className="hidden sm:inline" />
+          &amp; HR Solutions in <br className="hidden sm:inline" />
           Ahmedabad
         </motion.h1>
 
@@ -102,7 +102,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           transition={{ duration: 0.7, delay: 0.25 }}
           className="mt-4 sm:mt-5 text-sm sm:text-base md:text-lg text-gray-100 font-normal max-w-2xl leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
         >
-          Complete Facility Management Solutions for Clean, Compliant &amp; Efficient Operations across Ahmedabad and Gujarat.
+          Enterprise Security Services, Strategic HR Consulting &amp; Compliant Workforce Solutions for Safe, Efficient Operations across Ahmedabad and Gujarat.
         </motion.p>
 
         {/* Actions Area positioned slightly higher up */}

@@ -34,9 +34,9 @@ export const AboutSection: React.FC = () => {
             {/* Paragraph 1: Growth Story */}
             <p className="mt-4 text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
               What started as a young vision has grown into a full-fledged group delivering excellence in{" "}
-              <strong className="font-bold text-slate-900">Private Security</strong>,{" "}
-              <strong className="font-bold text-slate-900">Facility Management</strong>, and{" "}
-              <strong className="font-bold text-slate-900">Human Resource Consultancy</strong>. Our journey is powered by trust, hard work, and the belief that people are at the heart of every successful organization.
+              <strong className="font-bold text-slate-900">Security Solutions</strong>,{" "}
+              <strong className="font-bold text-slate-900">HR Solutions &amp; Consultancy</strong>, and{" "}
+              <strong className="font-bold text-slate-900">Workforce Staffing</strong>. Our journey is powered by trust, hard work, and the belief that people and security are at the heart of every successful organization.
             </p>
 
             {/* Paragraph 2: Core Philosophy */}

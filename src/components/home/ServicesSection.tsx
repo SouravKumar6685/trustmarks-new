@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import {
   ShieldCheck,
   Users,
-  Sparkles,
-  Cog,
   UserCheck,
+  GraduationCap,
   ArrowRight,
   Shield,
   BarChart3,
+  Cog,
 } from "lucide-react";
 
 interface ServicesSectionProps {
@@ -17,11 +17,11 @@ interface ServicesSectionProps {
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ onExploreClick }) => {
   const serviceBadges = [
-    { title: "Security Services", icon: ShieldCheck },
-    { title: "Workforce Solutions", icon: Users },
-    { title: "Housekeeping Services", icon: Sparkles },
-    { title: "Facility Management", icon: Cog },
-    { title: "HR Consultancy", icon: UserCheck },
+    { title: "Security Solutions", icon: ShieldCheck },
+    { title: "HR Solutions", icon: UserCheck },
+    { title: "Workforce Staffing", icon: Users },
+    { title: "Corporate Training", icon: GraduationCap },
+    { title: "Statutory Compliance", icon: Shield },
   ];
 
   const bottomFeatures = [
@@ -88,7 +88,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onExploreClick
 
             {/* Description Paragraph */}
             <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl font-normal">
-              From security to facility management, we deliver reliable and customised workforce solutions to keep your business running smoothly. Our services are designed to meet your unique needs with professionalism, care and efficiency.
+              From comprehensive security solutions to strategic HR consultancy and compliant workforce staffing, we deliver trusted solutions to protect your premises and empower your talent. Our services are designed to meet your unique needs with vigilance, professionalism and efficiency.
             </p>
 
             {/* 5 Circular Service Badges */}
@@ -154,8 +154,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onExploreClick
             {/* Script Text on Right (Desktop) */}
             <div className="absolute -top-6 right-2 xl:right-8 text-right hidden xl:block pointer-events-none select-none">
               <div className="text-2xl font-medium italic text-slate-700 tracking-tight leading-snug">
-                Clean <br />
                 Secure <br />
+                Compliant <br />
                 Productive <br />
                 <span className="font-bold text-slate-900 not-italic">Always</span>
               </div>

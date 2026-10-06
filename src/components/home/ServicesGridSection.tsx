@@ -79,21 +79,20 @@ export const ServicesGridSection: React.FC<ServicesGridSectionProps> = ({
 
           {/* Title */}
           <h2 className="text-3xl sm:text-4xl md:text-[44px] font-black tracking-tight text-[#0F172A] leading-tight font-sans">
-            Comprehensive Solutions, <br />
-            Tailored for <span className="text-[#EA580C]">Every Need</span>
+            Specialized Security &amp; HR Solutions, <br />
+            Tailored for <span className="text-[#EA580C]">Enterprise Success</span>
           </h2>
 
           {/* Subtitle */}
           <p className="mt-3.5 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-            We offer a wide range of services designed to meet your unique business needs.
-            Professional. Reliable. Always focused on people and performance.
+            Specialized private security, strategic HR advisory, and compliant workforce solutions engineered to protect your premises and empower your talent.
           </p>
         </div>
 
         {/* Loading Skeletons */}
         {loading && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-            {[1, 2, 3, 4, 5, 6].map((n) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-7">
+            {[1, 2, 3, 4].map((n) => (
               <div
                 key={n}
                 className="bg-white rounded-3xl p-6 h-[235px] border border-slate-200/60 animate-pulse flex flex-row justify-between"
@@ -131,9 +130,15 @@ export const ServicesGridSection: React.FC<ServicesGridSectionProps> = ({
 
         {/* Dynamic Responsive Grid */}
         {!loading && services.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          <div className={`grid grid-cols-1 md:grid-cols-2 ${services.length <= 4 ? "lg:grid-cols-2" : "lg:grid-cols-3"} gap-6 sm:gap-7`}>
             {services.map((service, index) => {
               const Icon = getIconComponent(service.icon_name);
+              const displayTitle =
+                service.title === "Security Services"
+                  ? "Security Solutions"
+                  : service.title === "HR Consultancy"
+                  ? "HR Solutions & Consultancy"
+                  : service.title;
 
               return (
                 <motion.div
@@ -156,7 +161,7 @@ export const ServicesGridSection: React.FC<ServicesGridSectionProps> = ({
 
                       {/* Title */}
                       <h3 className="text-base sm:text-lg font-black text-[#0F172A] tracking-tight group-hover:text-[#EA580C] transition-colors leading-snug">
-                        {service.title}
+                        {displayTitle}
                       </h3>
 
                       {/* Card Description */}

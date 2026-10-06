@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Gujarat's premier integrated facility management, industrial security, and specialized workforce partner. Delivering measurable operational excellence.
+              Gujarat's premier security solutions, HR consultancy, and specialized workforce partner. Delivering measurable operational excellence.
             </p>
             <div className="pt-2">
               <Link
@@ -123,7 +123,7 @@ export const Footer: React.FC = () => {
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <p className="text-slate-400">© {new Date().getFullYear()} Trustmarks Management Services. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <span className="text-slate-400">Excellence in Manpower &amp; Facility Care</span>
+            <span className="text-slate-400">Excellence in Security, HR &amp; Workforce Solutions</span>
             <button
               onClick={scrollToTop}
               className="p-2 rounded-full bg-slate-800 hover:bg-[#F5BA13] hover:text-black text-white transition-colors cursor-pointer"
