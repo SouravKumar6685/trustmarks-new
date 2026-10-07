@@ -316,7 +316,7 @@ export const AdminDashboardPage: React.FC = () => {
             {activeTab === "services" ? (
               <Link
                 to="/admin/services/new"
-                className="inline-flex items-center gap-2 bg-[#F5BA13] hover:bg-[#ffc82a] text-black font-extrabold text-xs uppercase tracking-wider px-4 sm:px-5 py-2.5 rounded-xl shadow-md transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 bg-[#EF7F1A] hover:bg-[#ffc82a] text-black font-extrabold text-xs uppercase tracking-wider px-4 sm:px-5 py-2.5 rounded-xl shadow-md transition-all cursor-pointer"
               >
                 <Plus className="w-4 h-4 stroke-[3]" />
                 <span>Add Service</span>
@@ -363,11 +363,10 @@ export const AdminDashboardPage: React.FC = () => {
         <div className="flex items-center gap-2 p-1.5 bg-neutral-900 border border-white/10 rounded-2xl max-w-md mb-8">
           <button
             onClick={() => setActiveTab("services")}
-            className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-black uppercase tracking-wider transition-all cursor-pointer ${
-              activeTab === "services"
+            className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-black uppercase tracking-wider transition-all cursor-pointer ${activeTab === "services"
                 ? "bg-amber-400 text-black shadow-md"
                 : "text-slate-400 hover:text-white hover:bg-white/5"
-            }`}
+              }`}
           >
             <Layers className="w-4 h-4" />
             <span>Services CMS ({services.length})</span>
@@ -375,11 +374,10 @@ export const AdminDashboardPage: React.FC = () => {
 
           <button
             onClick={() => setActiveTab("industries")}
-            className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-black uppercase tracking-wider transition-all cursor-pointer ${
-              activeTab === "industries"
+            className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-black uppercase tracking-wider transition-all cursor-pointer ${activeTab === "industries"
                 ? "bg-[#EA580C] text-white shadow-md"
                 : "text-slate-400 hover:text-white hover:bg-white/5"
-            }`}
+              }`}
           >
             <Building2 className="w-4 h-4" />
             <span>Industries CMS ({industries.length})</span>
@@ -920,11 +918,10 @@ export const AdminDashboardPage: React.FC = () => {
                           onClick={() =>
                             setIndustryFormData((prev) => ({ ...prev, icon_name: iconName }))
                           }
-                          className={`p-2.5 rounded-xl flex flex-col items-center justify-center gap-1 transition-all cursor-pointer ${
-                            isSelected
+                          className={`p-2.5 rounded-xl flex flex-col items-center justify-center gap-1 transition-all cursor-pointer ${isSelected
                               ? "bg-[#EA580C] text-white shadow-md scale-105"
                               : "bg-white/5 hover:bg-white/10 text-slate-300"
-                          }`}
+                            }`}
                           title={iconName}
                         >
                           <IconComp className="w-4 h-4" />

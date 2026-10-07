@@ -118,7 +118,7 @@ export const AdminLoginPage: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full mt-2 bg-[#F5BA13] hover:bg-[#ffc82a] text-black font-black text-xs uppercase tracking-wider py-3.5 rounded-xl shadow-[0_4px_20px_rgba(245,186,19,0.3)] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+            className="w-full mt-2 bg-[#EF7F1A] hover:bg-[#ffc82a] text-black font-black text-xs uppercase tracking-wider py-3.5 rounded-xl shadow-[0_4px_20px_rgba(245,186,19,0.3)] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
           >
             {loading ? (
               <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin" />

@@ -130,15 +130,15 @@ export const ServicesGridSection: React.FC<ServicesGridSectionProps> = ({
 
         {/* Dynamic Responsive Grid */}
         {!loading && services.length > 0 && (
-          <div className={`grid grid-cols-1 md:grid-cols-2 ${services.length <= 4 ? "lg:grid-cols-2" : "lg:grid-cols-3"} gap-6 sm:gap-7`}>
+          <div className={`grid grid-cols-1 md:grid-cols-2 ${services.length <= 4 ? "lg:grid-cols-3" : "lg:grid-cols-3"} gap-6 sm:gap-7`}>
             {services.map((service, index) => {
               const Icon = getIconComponent(service.icon_name);
               const displayTitle =
                 service.title === "Security Services"
                   ? "Security Solutions"
                   : service.title === "HR Consultancy"
-                  ? "HR Solutions & Consultancy"
-                  : service.title;
+                    ? "HR Solutions & Consultancy"
+                    : service.title;
 
               return (
                 <motion.div

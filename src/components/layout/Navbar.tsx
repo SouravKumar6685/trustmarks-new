@@ -346,7 +346,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
             className="relative group overflow-hidden font-extrabold text-xs sm:text-[13px] tracking-wider uppercase px-4 py-1.5 sm:py-2 rounded-full transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-md bg-[#EF7F1A] hover:bg-[#e07315] text-black shadow-[0_4px_14px_rgba(239,127,26,0.3)]"
           >
             <span className="relative z-10 font-bold">Book Now</span>
-            <div className="w-5 h-5 rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 bg-black/90 text-[#F5BA13]">
+            <div className="w-5 h-5 rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 bg-black/90 text-[#EF7F1A]">
               <Edit3 className="w-3 h-3" />
             </div>
           </motion.button>
@@ -474,7 +474,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
                   setMobileMenuOpen(false);
                   if (onBookNowClick) onBookNowClick();
                 }}
-                className="w-full bg-[#F5BA13] hover:bg-[#ffc82a] text-black font-bold text-sm py-3 rounded-xl flex items-center justify-center gap-2 shadow-md cursor-pointer"
+                className="w-full bg-[#EF7F1A] hover:bg-[#ffc82a] text-black font-bold text-sm py-3 rounded-xl flex items-center justify-center gap-2 shadow-md cursor-pointer"
               >
                 <PhoneCall className="w-4 h-4" />
                 <span>Book Service Consultation</span>

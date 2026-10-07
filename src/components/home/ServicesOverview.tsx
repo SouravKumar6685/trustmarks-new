@@ -68,7 +68,7 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ onBookServic
           >
             <div>
               <div className="flex items-center justify-between mb-6">
-                <div className="p-4 rounded-2xl bg-amber-100 text-amber-700 border border-amber-200 group-hover:bg-[#F5BA13] group-hover:text-black transition-colors duration-300">
+                <div className="p-4 rounded-2xl bg-amber-100 text-amber-700 border border-amber-200 group-hover:bg-[#EF7F1A] group-hover:text-black transition-colors duration-300">
                   <Users className="w-8 h-8" />
                 </div>
                 <span className="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-800 border border-amber-200">
@@ -106,7 +106,7 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ onBookServic
               </div>
               <button
                 onClick={() => onBookService && onBookService("WorkForce Solutions")}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#F5BA13] text-slate-950 font-bold text-sm hover:bg-[#ffc82a] transition-colors shadow-md cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#EF7F1A] text-slate-950 font-bold text-sm hover:bg-[#ffc82a] transition-colors shadow-md cursor-pointer"
               >
                 <span>Request WorkForce</span>
                 <ArrowRight className="w-4 h-4" />
@@ -125,7 +125,7 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ onBookServic
           >
             <div>
               <div className="flex items-center justify-between mb-6">
-                <div className="p-4 rounded-2xl bg-amber-100 text-amber-700 border border-amber-200 group-hover:bg-[#F5BA13] group-hover:text-black transition-colors duration-300">
+                <div className="p-4 rounded-2xl bg-amber-100 text-amber-700 border border-amber-200 group-hover:bg-[#EF7F1A] group-hover:text-black transition-colors duration-300">
                   <Briefcase className="w-8 h-8" />
                 </div>
                 <span className="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-700 border border-slate-200">

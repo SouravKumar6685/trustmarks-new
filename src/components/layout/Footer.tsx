@@ -126,7 +126,7 @@ export const Footer: React.FC = () => {
             <span className="text-slate-400">Excellence in Security, HR &amp; Workforce Solutions</span>
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-full bg-slate-800 hover:bg-[#F5BA13] hover:text-black text-white transition-colors cursor-pointer"
+              className="p-2 rounded-full bg-slate-800 hover:bg-[#EF7F1A] hover:text-black text-white transition-colors cursor-pointer"
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-4 h-4" />

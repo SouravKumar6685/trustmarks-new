@@ -102,7 +102,7 @@ export const BookNowModal: React.FC<BookNowModalProps> = ({
               <div className="pt-4">
                 <button
                   onClick={handleReset}
-                  className="px-6 py-2.5 rounded-full bg-[#F5BA13] text-slate-950 font-bold text-sm hover:bg-[#ffc82a] transition-colors cursor-pointer"
+                  className="px-6 py-2.5 rounded-full bg-[#EF7F1A] text-slate-950 font-bold text-sm hover:bg-[#ffc82a] transition-colors cursor-pointer"
                 >
                   Done
                 </button>
@@ -225,7 +225,7 @@ export const BookNowModal: React.FC<BookNowModalProps> = ({
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full mt-2 py-3.5 px-4 rounded-xl bg-[#F5BA13] hover:bg-[#ffca36] text-slate-950 font-extrabold text-sm tracking-wider uppercase transition-all shadow-md shadow-amber-500/25 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                  className="w-full mt-2 py-3.5 px-4 rounded-xl bg-[#EF7F1A] hover:bg-[#ffca36] text-slate-950 font-extrabold text-sm tracking-wider uppercase transition-all shadow-md shadow-amber-500/25 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                 >
                   {loading ? (
                     <span>Submitting...</span>

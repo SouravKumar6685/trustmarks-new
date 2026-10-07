@@ -52,9 +52,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-between items-center text-center overflow-hidden pt-24 pb-10 sm:pb-12 bg-neutral-950"
+      className="relative min-h-screen flex flex-col justify-between items-center text-center overflow-hidden pt-20 sm:pt-24 pb-8 sm:pb-10 bg-neutral-950"
     >
-      {/* Background Image Slideshow with Smooth 5s Crossfade & NO dark vignette */}
+      {/* Background Image Slideshow with Smooth 5s Crossfade */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <AnimatePresence mode="sync">
           <motion.div
@@ -73,26 +73,28 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </motion.div>
         </AnimatePresence>
 
-        {/* Clean, balanced overlay for readability without heavy top bars or vignette */}
+        {/* Clean, balanced overlay for readability */}
         <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/15 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/70" />
+        {/* Subtle diagonal corner vignette accents matching reference design */}
+        <div className="absolute -bottom-10 -left-10 w-96 h-96 bg-black/50 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-10 -right-10 w-96 h-96 bg-black/50 blur-3xl pointer-events-none" />
       </div>
 
       {/* Top spacer */}
-      <div className="w-full h-6 sm:h-8 relative z-10" />
+      <div className="w-full h-4 sm:h-6 relative z-10" />
 
       {/* Centered Main Hero Content Box */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center justify-center my-auto">
-        {/* Main Headline (Centered with clean sizing) */}
+        {/* Main Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-2xl sm:text-4xl md:text-5xl lg:text-[46px] font-extrabold text-white tracking-tight leading-[1.2] font-sans drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)] max-w-3xl"
+          className="text-2xl sm:text-4xl md:text-5xl lg:text-[48px] font-extrabold text-white tracking-tight leading-[1.18] font-sans drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)] max-w-3xl"
         >
-          Comprehensive Security Solutions <br className="hidden sm:inline" />
-          &amp; HR Solutions in <br className="hidden sm:inline" />
-          Ahmedabad
+          Recruitment, Staffing &amp; <br className="hidden sm:inline" />
+          Security Manpower Solutions
         </motion.h1>
 
         {/* Subtitle */}
@@ -100,12 +102,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.25 }}
-          className="mt-4 sm:mt-5 text-sm sm:text-base md:text-lg text-gray-100 font-normal max-w-2xl leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
+          className="mt-4 sm:mt-5 text-sm sm:text-base md:text-lg text-gray-200 font-normal max-w-2xl leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
         >
-          Enterprise Security Services, Strategic HR Consulting &amp; Compliant Workforce Solutions for Safe, Efficient Operations across Ahmedabad and Gujarat.
+          Reliable manpower solutions to help businesses hire skilled professionals and deploy trained security personnel across Ahmedabad and Gujarat.
         </motion.p>
 
-        {/* Actions Area positioned slightly higher up */}
+        {/* Actions Area */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -127,7 +129,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               />
               <text className="text-[9px] uppercase tracking-[2.8px] fill-gray-200 font-bold">
                 <textPath href="#circlePath" startOffset="0%">
-                  • SCROLL DOWN • SCROLL DOWN
+                  • TRUSTED • PEOPLE • BUSINESSES
                 </textPath>
               </text>
             </motion.svg>
@@ -136,7 +138,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <button
               onClick={scrollToServices}
               aria-label="Scroll down"
-              className="absolute inset-0 m-auto w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#F5BA13] hover:bg-[#ffc82a] text-black flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer"
+              className="absolute inset-0 m-auto w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#EF7F1A] hover:bg-[#ffc82a] text-black flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer"
             >
               <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 font-black stroke-[2.5]" />
             </button>
@@ -145,10 +147,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {/* LEARN MORE Button */}
           <button
             onClick={scrollToServices}
-            className="group flex items-center gap-2.5 text-white font-extrabold text-xs sm:text-sm tracking-widest uppercase hover:text-[#F5BA13] transition-colors cursor-pointer"
+            className="group flex items-center gap-2.5 text-white font-extrabold text-xs sm:text-sm tracking-widest uppercase hover:text-[#EF7F1A] transition-colors cursor-pointer"
           >
             <span>Learn More</span>
-            <div className="w-7 h-7 rounded-full bg-[#F5BA13] text-black flex items-center justify-center group-hover:translate-x-1.5 transition-transform duration-200 shadow-md">
+            <div className="w-7 h-7 rounded-full bg-[#EF7F1A] text-black flex items-center justify-center group-hover:translate-x-1.5 transition-transform duration-200 shadow-md">
               <ArrowRight className="w-3.5 h-3.5 font-black stroke-[2.5]" />
             </div>
           </button>
@@ -166,7 +168,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           >
             <div
               className={`h-1.5 rounded-full transition-all duration-500 ${currentSlide === index
-                ? "w-8 bg-[#F5BA13] shadow-[0_0_12px_rgba(245,186,19,0.8)]"
+                ? "w-8 bg-[#EF7F1A] shadow-[0_0_12px_rgba(245,186,19,0.8)]"
                 : "w-2.5 bg-white/40 group-hover:bg-white/70"
                 }`}
             />
