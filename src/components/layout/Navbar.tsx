@@ -146,43 +146,43 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out px-4 sm:px-8 lg:px-12",
         isScrolled
-          ? "py-3 bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-md text-slate-800"
-          : "py-3.5 sm:py-4 bg-white/95 backdrop-blur-lg border-b border-slate-200/60 shadow-sm text-slate-800"
+          ? "py-1.5 sm:py-2 bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-md text-slate-800"
+          : "py-2 sm:py-2.5 bg-white/95 backdrop-blur-lg border-b border-slate-200/60 shadow-sm text-slate-800"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Left Side: Brand & Logo */}
         <button
           onClick={() => scrollToTargetSection("home")}
-          className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-xl p-1 text-left cursor-pointer"
+          className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-xl p-0.5 text-left cursor-pointer"
         >
           <div className="relative flex items-center justify-center p-0.5 rounded-xl transition-all duration-300 group-hover:scale-105">
             <img
               src="/trustmark-logo.png"
               alt="Trustmarks Logo"
-              className="h-10 sm:h-11 w-auto object-contain transition-transform duration-300"
+              className="h-8 sm:h-9 w-auto object-contain transition-transform duration-300"
               onError={(e) => {
                 (e.target as HTMLImageElement).src = "/logo.png";
               }}
             />
           </div>
           <div className="flex flex-col text-left">
-            <span className="font-extrabold text-base sm:text-lg tracking-wider font-sans leading-tight text-slate-900 transition-colors duration-200 group-hover:text-amber-600">
+            <span className="font-extrabold text-sm sm:text-base tracking-wider font-sans leading-tight text-slate-900 transition-colors duration-200 group-hover:text-amber-600">
               TRUSTMARKS
             </span>
-            <span className="font-bold text-[10px] sm:text-xs tracking-widest uppercase text-slate-500 transition-colors duration-200">
+            <span className="font-bold text-[9px] sm:text-[10px] tracking-widest uppercase text-slate-500 transition-colors duration-200">
               MANAGEMENT SERVICES
             </span>
           </div>
         </button>
 
         {/* Center: Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-4">
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-3">
           {/* HOME */}
           <button
             onClick={() => scrollToTargetSection("home")}
             className={cn(
-              "px-3 py-2 text-xs xl:text-sm font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer",
+              "px-2.5 py-1.5 text-xs xl:text-[13px] font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer",
               isHomeActive
                 ? "text-amber-500 font-extrabold"
                 : "text-slate-700 hover:text-amber-600"
@@ -200,7 +200,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
             <button
               onClick={() => scrollToTargetSection("services")}
               className={cn(
-                "flex items-center gap-1 px-3 py-2 text-xs xl:text-sm font-bold tracking-wider uppercase transition-all duration-200 focus:outline-none cursor-pointer",
+                "flex items-center gap-1 px-2.5 py-1.5 text-xs xl:text-[13px] font-bold tracking-wider uppercase transition-all duration-200 focus:outline-none cursor-pointer",
                 isServicesActive
                   ? "text-amber-500 font-extrabold"
                   : "text-slate-700 hover:text-amber-600"
@@ -301,7 +301,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
           <button
             onClick={() => scrollToTargetSection("industries")}
             className={cn(
-              "px-3 py-2 text-xs xl:text-sm font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer",
+              "px-2.5 py-1.5 text-xs xl:text-[13px] font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer",
               isIndustriesActive
                 ? "text-amber-500 font-extrabold"
                 : "text-slate-700 hover:text-amber-600"
@@ -314,7 +314,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
           <button
             onClick={() => scrollToTargetSection("about")}
             className={cn(
-              "px-3 py-2 text-xs xl:text-sm font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer",
+              "px-2.5 py-1.5 text-xs xl:text-[13px] font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer",
               isAboutActive
                 ? "text-amber-500 font-extrabold"
                 : "text-slate-700 hover:text-amber-600"
@@ -327,7 +327,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
           <button
             onClick={() => scrollToTargetSection("contact")}
             className={cn(
-              "px-3 py-2 text-xs xl:text-sm font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer",
+              "px-2.5 py-1.5 text-xs xl:text-[13px] font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer",
               isContactActive
                 ? "text-amber-500 font-extrabold"
                 : "text-slate-700 hover:text-amber-600"
@@ -338,26 +338,26 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookNowClick, variant = "auto"
         </nav>
 
         {/* Right Side: BOOK NOW button */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
           <motion.button
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
             onClick={onBookNowClick}
-            className="relative group overflow-hidden font-extrabold text-xs sm:text-sm tracking-wider uppercase px-5 py-2.5 rounded-full transition-all duration-300 flex items-center gap-2.5 cursor-pointer shadow-md bg-[#EF7F1A] hover:bg-[#EF7F1A] text-black shadow-[0_4px_16px_rgba(245,186,19,0.35)]"
+            className="relative group overflow-hidden font-extrabold text-xs sm:text-[13px] tracking-wider uppercase px-4 py-1.5 sm:py-2 rounded-full transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-md bg-[#EF7F1A] hover:bg-[#e07315] text-black shadow-[0_4px_14px_rgba(239,127,26,0.3)]"
           >
-            <span className="relative z-10 font-black">Book Now</span>
-            <div className="w-6 h-6 rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 bg-black/90 text-[#F5BA13]">
-              <Edit3 className="w-3.5 h-3.5" />
+            <span className="relative z-10 font-bold">Book Now</span>
+            <div className="w-5 h-5 rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 bg-black/90 text-[#F5BA13]">
+              <Edit3 className="w-3 h-3" />
             </div>
           </motion.button>
 
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg transition-colors focus:outline-none bg-slate-100 text-slate-700 hover:text-amber-600 hover:bg-slate-200 border border-slate-200"
+            className="lg:hidden p-1.5 rounded-lg transition-colors focus:outline-none bg-slate-100 text-slate-700 hover:text-amber-600 hover:bg-slate-200 border border-slate-200"
             aria-label="Toggle Navigation Menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
